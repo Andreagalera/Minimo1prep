@@ -27,10 +27,23 @@ subjectCtrl.createSubject = async (req, res) => {
 
 //Añadir alumno asignatura(POST)
 subjectCtrl.createStudent= function(){
-   
+ /*    const student = new Student({
+        name: req.body.name
+    })
+    console.log(student);
+    await student.save();
+    res.json({
+        'status': 'Student guardado'
+    }); */
 };
+
 //Ver informació asignatura(GET)
-subjectCtrl.getInfoSubjects= function(){}
+subjectCtrl.getInfoSubjects=  async (req, res) => {
+    console.log(req.params.id);
+    const subject = await Subject.findById(req.params.id);
+    res.json(subject);
+
+}
 //Ver informació de alumno(GET)
 subjectCtrl.getInfoStudent= function(){}
 
