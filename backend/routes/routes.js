@@ -2,9 +2,14 @@ const express = require('express');
 const router = express.Router();
 
 const subject = require('../controllers/controller');
-router.get('/',subject.getSubjects);
-router.get('/:id',subject.getInfoSubjects);
-router.get('/:id',subject.getInfoStudent);
-router.post('/', subject.createSubject);
+router.get('/subjects',subject.getSubjects);
+router.get('/subjects/:id',subject.getInfoSubjects);
+router.post('/subjects', subject.createSubject);
+router.put('/subjects/addStudent', subject.createStudentSubject);
+
+const student= require('../controllers/studentcontroller');
+router.post('/student', student.postStudent);
+router.get('/students', student.getStudents);
+//router.get('/student', student.getDetailStudent);
 
 module.exports =router;

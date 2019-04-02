@@ -19,22 +19,24 @@ subjectCtrl.createSubject = async (req, res) => {
         name: req.body.name
     })
     console.log(subject);
+    try{
     await subject.save();
     res.json({
         'status': 'Subject guardado'
     });
+    }
+    catch(err){
+        res.status(500).send(err);
+            console.log(err);
+    }
 };
 
-//Añadir alumno asignatura(POST)
-subjectCtrl.createStudent= function(){
- /*    const student = new Student({
-        name: req.body.name
-    })
-    console.log(student);
-    await student.save();
-    res.json({
-        'status': 'Student guardado'
-    }); */
+ //Añadir alumno asignatura(POST)
+subjectCtrl.createStudentSubject= async (req, res) => {
+    const subjectId = req.body.subjectId;
+    const studentId = req.body.studentId;
+    let subjectUpdated = await Subject.findOneAndUpdate({_id: subjectId}, {$addToSet: {student: studentId}});
+    res.status(200).send({message: "Student added successfully to the subject"})
 };
 
 //Ver informació asignatura(GET)
@@ -44,7 +46,7 @@ subjectCtrl.getInfoSubjects=  async (req, res) => {
     res.json(subject);
 
 }
-//Ver informació de alumno(GET)
-subjectCtrl.getInfoStudent= function(){}
+
+
 
 module.exports = subjectCtrl;
