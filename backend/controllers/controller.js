@@ -46,7 +46,20 @@ subjectCtrl.getInfoSubjects=  async (req, res) => {
     res.json(subject);
 
 }
-
+//Ver estudiantes subjects
+    subjectCtrl.getnameStudents =  async (req, res) => {
+        try {
+            // const _id = req.params.subjectId;
+            let subject = await Subject.findById(req.params.id).populate('student');
+            if(!subject){
+                return res.status(404).send({message: 'Subject not found'})
+            }else{
+                res.status(200).send(subject)
+            }
+        } catch(err) {
+            res.status(500).send(err)
+        }
+    }
 
 
 module.exports = subjectCtrl;

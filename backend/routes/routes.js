@@ -6,6 +6,7 @@ router.get('/subjects',subject.getSubjects);
 router.get('/subjects/:id',subject.getInfoSubjects);
 router.post('/subjects', subject.createSubject);
 router.put('/subjects/addStudent', subject.createStudentSubject);
+router.get('/subjects/studentDetail/:id', subject.getnameStudents);
 
 const student= require('../controllers/studentcontroller');
 router.post('/student', student.postStudent);
