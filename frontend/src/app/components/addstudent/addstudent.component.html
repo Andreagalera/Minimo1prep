@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row">
+    <div class="col s5">
+      <div class="card">
+        <div class="card-content">
+          <form #studentForm="ngForm" (ngSubmit)="postStudent(studentForm)">
+              <input type="hidden" name="_id" #_id="ngModel" [(ngModel)] ="studentService.selectedStudent._id">
+            <div class="row">
+                  <div class="input-field col s12">
+                  <input type="text" name="name" #name="ngModel" [(ngModel)]="studentService.selectedStudent.name" placeholder="Ingresa tu nombre">
+                  </div>
+                  <div class="input-field col s12">
+                  <input type="text" name="address" #position="ngModel" [(ngModel)]="studentService.selectedStudent.address" placeholder="Ingresa tu address">
+                  </div>
+                  <div class="input-field col s12">
+                  <input type="text" name="phone" #office="ngModel" [(ngModel)]="studentService.selectedStudent.phone" placeholder="Ingresa tu phone">
+                  </div>
+                  
+                  <div class="card-action">
+                    <div class="input-field col 12">
+                        <button class="btn right" (click)="resetForm(studentForm)">Clean </button>
+                        <button class="btn right" style="margin-left: 2px">Create Student </button>
+                    </div>
+                  </div>
+            
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

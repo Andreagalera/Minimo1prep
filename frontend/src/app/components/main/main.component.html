@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="row">
+        <div class="col s7">
+          <table>
+            <thead>
+              <th>Name</th>
+            </thead>
+            <tbody>
+              <tr *ngFor="let subject of subjectsList">
+                <td>{{ subject.name}}</td>
+                <button class="btn right" (click)="getInfoSubjects(subject._id) ">Details of a subject</button>
+                  <td> {{subject.id}}</td>
+              </tr>
+            </tbody>
+          </table>
+        
+          </div>
+        </div>
+      </div>
+      
