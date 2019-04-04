@@ -24,4 +24,8 @@ export class SubjectService {
   getInfoSubjects(_id: string):Observable<Subject[]>{
     return this.http.get<Subject[]>(this.URL_API + `/${_id}`);
   }
+  editSubject(subject: Subject){
+    return this.http.put(this.URL_API + `/editSubject/${subject._id}`, subject);
+  }
+  
 }

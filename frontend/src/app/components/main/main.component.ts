@@ -28,6 +28,11 @@ export class MainComponent implements OnInit {
         console.log(res);
       });
   }
+  editSubject(subject: Subject){
+    this.subjectService.selectedSubject = subject;
+  }
+ 
+  
   ngOnInit() {
     this.getSubjects();
   }

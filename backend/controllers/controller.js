@@ -61,5 +61,18 @@ subjectCtrl.getInfoSubjects=  async (req, res) => {
         }
     }
 
+    //PUT subject
+    subjectCtrl.editSubject =  async (req, res) => {
+    //Subjects.findByIdAndUpdate(req.params.id)
+    const {id } =req.params;
+    const subject= {
+        id: req.body._id,
+        name: req.body.name,
+        student: req.body.student
+    };
+    await Subject.findByIdAndUpdate(id, {$set: subject}, {new: true});
+    res.json({status: 'Subject actualizado'});
+};
+
 
 module.exports = subjectCtrl;
