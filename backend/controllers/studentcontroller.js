@@ -5,8 +5,12 @@ const studentCtrl = {};
 
 //Crear student
 studentCtrl.postStudent = async (req, res)  => { 
-    console.log(req.body)
-    const student = new Student(req.body)
+    //console.log(req.body)
+    const student = new Student()
+    student.name = req.body.name;
+    student.address = req.body.address;
+    student.phone = req.body.phone;
+    console.log(student);
     try{
         await student.save();
         res.status(200).send({message: "Student guardado"})

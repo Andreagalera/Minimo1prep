@@ -60,6 +60,12 @@ subjectCtrl.getInfoSubjects=  async (req, res) => {
             res.status(500).send(err)
         }
     }
+    //Ver estudiantes todas subjects
+    subjectCtrl.getnameallStudents =  async (req, res) => {
+        const subjects = await Subject.find().populate('student');
+        res.json(subjects);
+            
+    }
 
     //PUT subject
     subjectCtrl.editSubject =  async (req, res) => {

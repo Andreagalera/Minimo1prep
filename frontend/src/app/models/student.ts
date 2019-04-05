@@ -13,4 +13,8 @@ export class Student {
     name: string;
     address: string;
     phone: Phone[];
+
+    addPhone(phone: Phone[]){
+        this.phone=phone;
+    }
 }

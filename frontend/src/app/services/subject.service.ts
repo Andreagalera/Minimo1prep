@@ -21,11 +21,19 @@ export class SubjectService {
   getSubjects():Observable<Subject[]>{
     return this.http.get<Subject[]>(this.URL_API);
   }
-  getInfoSubjects(_id: string):Observable<Subject[]>{
-    return this.http.get<Subject[]>(this.URL_API + `/${_id}`);
+  getnameallStudents(_id: string):Observable<Subject>{
+    return this.http.get<Subject>('http://localhost:3000/api/studentAllDetails');
+  }
+  getInfoSubjects(_id: string):Observable<Subject>{
+    return this.http.get<Subject>(this.URL_API + `/${_id}`);
   }
   editSubject(subject: Subject){
     return this.http.put(this.URL_API + `/editSubject/${subject._id}`, subject);
+  }
+
+  createStudentSubject(subjectId: string, studentId: string){
+    
+    return this.http.put(this.URL_API + '/addStudent', {"studentId": studentId, "subjectId": subjectId});
   }
   
 }

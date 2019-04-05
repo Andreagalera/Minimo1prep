@@ -20,7 +20,7 @@ export class AddsubjectComponent implements OnInit {
       this.subjectService.createSubject(form.value)
       .subscribe(res => {
         this.resetForm(form);
-        M.toast({html: 'Subject actualizado'});
+        M.toast({html: 'Subject creada'});
         //this.getSubjcects();
       })
     }

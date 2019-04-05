@@ -1,44 +1,5 @@
 <div class="container">
     <div class="row">
-      <div class="col s5">
-        <div class="card">
-          <div class="card-content">
-          <form #subjectForm="ngForm">
-              <div class="row">
-                <div>Name:</div>
-                <nav>
-                    <div class="input-field col s12">
-                    <input type="text" name="name" readonly="readonly" #name="ngModel" [(ngModel)]="subjectService.selectedSubject.name" placeholder="">
-                    </div>
-                  </nav>
-                  <div>Id:</div>
-                  <nav>
-                    <div class="input-field col s12">
-                        <input type="text" name="id" readonly="readonly" #name="ngModel" [(ngModel)]="subjectService.selectedSubject._id" placeholder="">
-                    </div>
-                  </nav>
-                  <div>Students:</div>
-                    <nav>
-                    <div class="input-field col s12">
-                        <input type="text" name="student" readonly="readonly" #name="ngModel" [(ngModel)]="subjectService.selectedSubject.student" placeholder="">
-                    </div>
-                  </nav>
-                  <div>New student</div>
-                  <nav>
-                      <div class="input-field col s12">
-                          <input type="text" name="newStudent"  placeholder="Ingresar id estudiante">
-                      </div>
-                    </nav>
-                    <div class="card-action">
-                        <div class="input-field col 12">
-                            <button class="btn right" >Insert student in a subject </button>
-                        </div>
-                      </div>
-              </div>
-          </form>
-        </div>
-      </div>
-    </div>
         <div class="col s7">
           <table>
             <thead>
@@ -47,8 +8,9 @@
             <tbody>
               <tr *ngFor="let subject of subjectsList">
                 <td>{{ subject.name}}</td>
-                <button class="btn right" (click)="editSubject(subject) ">Details of a subject</button>
-                  <td> {{subject.id}}</td>
+                <button class="btn right" style="margin-left: 5px" [routerLink]="['/subjects', subject._id]">Details of a subject</button>
+                <button class="btn right" [routerLink]="['/subjects/subjectdetail', subject._id]">Details of a subject student</button>
+                
               </tr>
             </tbody>
           </table>
@@ -56,4 +18,3 @@
           </div>
         </div>
       </div>
-      

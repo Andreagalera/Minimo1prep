@@ -6,16 +6,30 @@
           <form #studentForm="ngForm" (ngSubmit)="postStudent(studentForm)">
               <input type="hidden" name="_id" #_id="ngModel" [(ngModel)] ="studentService.selectedStudent._id">
             <div class="row">
+              <div>Name: </div>
+              <nav>
                   <div class="input-field col s12">
                   <input type="text" name="name" #name="ngModel" [(ngModel)]="studentService.selectedStudent.name" placeholder="Ingresa tu nombre">
                   </div>
+              </nav>
+              <div>Address: </div>
+              <nav>
                   <div class="input-field col s12">
-                  <input type="text" name="address" #position="ngModel" [(ngModel)]="studentService.selectedStudent.address" placeholder="Ingresa tu address">
+                  <input type="text" name="address" #address="ngModel" [(ngModel)]="studentService.selectedStudent.address" placeholder="Ingresa tu address">
                   </div>
+              </nav>
+              <div>Phone 1: </div>
+              <nav>
                   <div class="input-field col s12">
-                  <input type="text" name="phone" #office="ngModel" [(ngModel)]="studentService.selectedStudent.phone" placeholder="Ingresa tu phone">
+                  <input type="text" name="phone1" #phone1="ngModel" [(ngModel)]="studentService.selectedStudent.phone1" placeholder="Ingresa tu phone 1">
                   </div>
-                  
+              </nav>
+              <div>Phone 2: </div>
+              <nav>
+                  <div class="input-field col s12">
+                      <input type="text" name="phone2" #phone2="ngModel" [(ngModel)]="studentService.selectedStudent.phone2" placeholder="Ingresa tu phone 2">
+                      </div>
+              </nav>
                   <div class="card-action">
                     <div class="input-field col 12">
                         <button class="btn right" (click)="resetForm(studentForm)">Clean </button>

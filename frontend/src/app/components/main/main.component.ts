@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { SubjectService} from '../../services/subject.service';
 import { Subject } from 'src/app/models/subject';
-
+import { NgForm } from '@angular/forms';
+import { Student } from 'src/app/models/student';
+declare var M: any;
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
@@ -9,7 +11,6 @@ import { Subject } from 'src/app/models/subject';
 })
 export class MainComponent implements OnInit {
   subjectsList: Subject[] = [];
-  subjectsListInfo: Subject[] = [];
 
   constructor(private subjectService: SubjectService) { }
 
@@ -20,18 +21,6 @@ export class MainComponent implements OnInit {
         console.log(res);
       });
   }
-
-  getInfoSubjects(_id){
-    this.subjectService.getInfoSubjects(_id)
-      .subscribe(res => {
-        this.subjectsListInfo= res;
-        console.log(res);
-      });
-  }
-  editSubject(subject: Subject){
-    this.subjectService.selectedSubject = subject;
-  }
- 
   
   ngOnInit() {
     this.getSubjects();

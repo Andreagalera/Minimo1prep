@@ -1,3 +1,5 @@
+import { Student } from './student';
+
 export class Subject {
     constructor(_id = '', name = '',student = null) {
         this._id= _id;
@@ -7,6 +9,6 @@ export class Subject {
     }
     _id: string;
     name: string;
-    student: [];
+    student: Student[];
 
 }
