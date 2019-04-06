@@ -67,7 +67,8 @@ export class DetailstudentComponent implements OnInit {
     this.subjectService.createStudentSubject(this.subjectId, this.studentId)
     .subscribe(res => {
       M.toast({html: 'Student guardado'});
-      //this.getStudent();
+      this.getnameallStudents(this.subjectId);
+      form.reset();
     });
   
   }
