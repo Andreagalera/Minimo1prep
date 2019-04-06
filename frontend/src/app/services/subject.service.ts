@@ -33,7 +33,7 @@ export class SubjectService {
 
   createStudentSubject(subjectId: string, studentId: string){
     
-    return this.http.put(this.URL_API + '/addStudent', {"studentId": studentId, "subjectId": subjectId});
+    return this.http.put(this.URL_API + '/addStudent/', {"subjectId": subjectId, "studentId": studentId});
   }
   
 }

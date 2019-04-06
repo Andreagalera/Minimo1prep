@@ -1,3 +1,6 @@
+<div class="container">
+    <div class="row">
+        <div class="col s7">
 <h2>Subject with Student Detail of {{subject.name}}</h2>
   <h2>{{subject.name}}</h2>
   <p><b>ID:</b> {{subject._id}}</p>
@@ -16,4 +19,45 @@
     </tr>
   </tbody>
 </table>
+<div class="row">
+    <div class="input-field col s12">
+        <form #newStudentForm="ngForm" (ngSubmit)="createStudentSubject(newStudentForm)">
+    <input type="text" name="_id" #_id="ngModel" [(ngModel)]="studentService.selectedStudent._id" placeholder="Ingresa el id new student">
+  </form>
+    </div>
+    <div class="card-action">
+        <div class="input-field col 12">
+            <button class="btn right" (click)="createStudentSubject(newStudentForm)">Add new student </button>
+        </div>
+      </div>
+</div>
+</div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col s7">
+            <h2>All Students</h2>
+          <table>
+            <thead>
+              <th>Name</th>
+              <th>Id</th>
+              <th>Add</th>
+            </thead>
+            <tbody>
+              <tr *ngFor="let student of studentsList">
+                <td>{{ student.name}}</td>
+                <td>{{ student._id}}</td>
+                <td>
+                    <a (click)="createStudentSubject(subject._id, student._id)">
+                        <i class="material-icons">add</i>
+                      </a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+         </div>
+        </div>
+      </div>
+
   
