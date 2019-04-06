@@ -80,5 +80,12 @@ subjectCtrl.getInfoSubjects=  async (req, res) => {
     res.json({status: 'Subject actualizado'});
 };
 
+//DELETE employee
+subjectCtrl.deleteSubject =  async (req, res) => {
+    await Subject.findByIdAndRemove(req.params.id);
+    res.json({ status: 'Subject eliminado '});
+
+};
+
 
 module.exports = subjectCtrl;

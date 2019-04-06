@@ -42,17 +42,11 @@
             <thead>
               <th>Name</th>
               <th>Id</th>
-              <th>Add</th>
             </thead>
             <tbody>
               <tr *ngFor="let student of studentsList">
                 <td>{{ student.name}}</td>
                 <td>{{ student._id}}</td>
-                <td>
-                    <a (click)="createStudentSubject(subject._id, student._id)">
-                        <i class="material-icons">add</i>
-                      </a>
-                </td>
               </tr>
             </tbody>
           </table>

@@ -9,6 +9,7 @@ router.put('/subjects/addStudent', subject.createStudentSubject);
 router.get('/subjects/studentDetail/:id', subject.getnameStudents);
 router.get('/studentAllDetails', subject.getnameallStudents);
 router.put('/subjects/editSubject/:id', subject.editSubject);
+router.delete('/subjects/:id', subject.deleteSubject);
 
 const student= require('../controllers/studentcontroller');
 router.post('/student', student.postStudent);

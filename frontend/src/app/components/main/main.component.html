@@ -4,13 +4,16 @@
           <table>
             <thead>
               <th>Name</th>
+              <th>Borrar</th>
             </thead>
             <tbody>
               <tr *ngFor="let subject of subjectsList">
                 <td>{{ subject.name}}</td>
                 <button class="btn right" style="margin-left: 5px" [routerLink]="['/subjects', subject._id]">Details of a subject</button>
                 <button class="btn right" [routerLink]="['/subjects/subjectdetail', subject._id]">Details of a subject student</button>
-                
+                <a (click)="deleteSubject(subject._id)">
+                    <i class="material-icons">delete</i>
+                  </a>
               </tr>
             </tbody>
           </table>

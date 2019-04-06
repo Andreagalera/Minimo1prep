@@ -21,6 +21,16 @@ export class MainComponent implements OnInit {
         console.log(res);
       });
   }
+
+  deleteSubject(_id: string){
+    if (confirm('Are you sure you want to delete it?')){
+        this.subjectService.deleteSubject(_id)
+        .subscribe( res=> {
+          this.getSubjects();
+          M.toast({html: 'Subject eliminado'});    
+    });
+  }
+  }
   
   ngOnInit() {
     this.getSubjects();

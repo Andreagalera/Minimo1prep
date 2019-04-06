@@ -35,5 +35,8 @@ export class SubjectService {
     
     return this.http.put(this.URL_API + '/addStudent/', {"subjectId": subjectId, "studentId": studentId});
   }
+  deleteSubject(_id: string){
+    return this.http.delete(this.URL_API + `/${_id}`);
+  }
   
 }
