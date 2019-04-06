@@ -1,3 +1,19 @@
-<p>
-  detailstudent works!
-</p>
+<h2>Subject with Student Detail of {{subject.name}}</h2>
+  <h2>{{subject.name}}</h2>
+  <p><b>ID:</b> {{subject._id}}</p>
+  <b>Students:</b>
+  <table>
+      <thead>
+        <th>Name</th>
+        <th>Id</th>
+        <th>Address</th>
+      </thead>
+      <tbody>
+      <tr *ngFor="let student of subject.student">
+      <td>{{student.name}}</td>
+      <td>{{student._id}}</td>
+      <td>{{student.address}}</td>
+    </tr>
+  </tbody>
+</table>
+  

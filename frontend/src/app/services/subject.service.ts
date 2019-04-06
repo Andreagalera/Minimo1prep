@@ -22,7 +22,7 @@ export class SubjectService {
     return this.http.get<Subject[]>(this.URL_API);
   }
   getnameallStudents(_id: string):Observable<Subject>{
-    return this.http.get<Subject>('http://localhost:3000/api/studentAllDetails');
+    return this.http.get<Subject>(this.URL_API + `/studentDetail/${_id}`);
   }
   getInfoSubjects(_id: string):Observable<Subject>{
     return this.http.get<Subject>(this.URL_API + `/${_id}`);
