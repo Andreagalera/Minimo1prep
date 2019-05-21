@@ -14,6 +14,7 @@ router.delete('/subjects/:id', subject.deleteSubject);
 const student= require('../controllers/studentcontroller');
 router.post('/student', student.postStudent);
 router.get('/students', student.getStudents);
+router.get('/students/:id', student.getInfoStudent);
 //router.get('/student', student.getDetailStudent);
 
 module.exports =router;

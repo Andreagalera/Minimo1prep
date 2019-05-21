@@ -28,6 +28,14 @@ studentCtrl.getStudents = async (req, res) =>{
     res.json(listaStudents);
 }
 
+//Get student
+studentCtrl.getInfoStudent=  async (req, res) => {
+    console.log(req.params.id);
+    const student = await Student.findById(req.params.id);
+    res.json(student);
+
+}
+
        
 
     
